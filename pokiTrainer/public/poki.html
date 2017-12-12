@@ -1,0 +1,24 @@
+<html>
+<head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script>
+$(document).ready(function(){
+  
+});
+</script>
+</head>
+<body>
+<div id='trainer' ng-app='app' ng-controller='mainCtrl'>
+  <h1>Pokemon Trainer {{name}}!</h1>
+  <h2>Current Pokemon Team</h2>
+  <form id='team' ng-submit='changeMember()'>
+    <ul>
+      <li ng-repeat='p in pokemon'>
+	<div ng-if='p.poki1 != 0' id='teamPlacement'>
+	</div>
+      </li>
+    </ul>
+  </form>
+</div>
+</body>
+</html>

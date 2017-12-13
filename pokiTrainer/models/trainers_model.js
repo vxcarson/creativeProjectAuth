@@ -1,6 +1,6 @@
 var mongoose = require('mongoose'),
     Schema = mongoose.Schema;
-var TrainerSchema = new Schema;
+var TrainerSchema = new Schema({
     username: { type: String, unique: true },
     email: String,
     hashed_password: String,

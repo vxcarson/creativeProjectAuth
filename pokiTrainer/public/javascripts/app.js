@@ -1,10 +1,13 @@
-var app = window.angular.module('app', [])
-
-app.factory('pokemonFetcher', pokemonFetcher)
-app.controller('mainCtrl', mainCtrl)
-
-function pokemonFetcher ($http) {
-
-}
-
-
+angular.module('myApp', []).
+  controller('myController', ['$scope', '$http',
+                              function($scope, $http) {
+    $http.get('/user/profile')
+        .success(function(data, status, headers, config) {
+      $scope.user = data;
+      $scope.error = "";
+    }).
+    error(function(data, status, headers, config) {
+      $scope.user = {};
+      $scope.error = data;
+    });
+  }]);
